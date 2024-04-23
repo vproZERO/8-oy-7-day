@@ -1,12 +1,19 @@
+"use client"
+import React from "react"
+import { Provider } from "react-redux"
+import store from "@/redux/atore"
+
+interface Provider {
+    children: React.ReactNode
+}
 
 
-
-const ReduxProvider = ({ children }: any) => {
+const ReduxProvider:React.FC<Provider> = ({ children }) => {
 
     return (
-        <div>
+        <Provider store={store}>
             {children}
-        </div>
+        </Provider>
     )
 }
 
